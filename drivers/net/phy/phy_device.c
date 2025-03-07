@@ -895,6 +895,18 @@ static int get_phy_c22_id(struct mii_bus *bus, int addr, u32 *phy_id)
 
 	*phy_id |= phy_reg;
 
+	pr_info("yucca: get rtl8364 phy_id %x, addr %d\n", *phy_id, addr);
+
+	if (addr == 29 or addr == 0) {
+		/* set a fake number to let kernel driver load successfully.
+		 *
+		 * Later, we need to use phytool to config mac correctly
+		 * to make it work
+		 */
+		*phy_id = 0x12345678;
+		return 0;
+	}
+
 	/* If the phy_id is mostly Fs, there is no device there */
 	if ((*phy_id & 0x1fffffff) == 0x1fffffff)
 		return -ENODEV;

@@ -343,6 +343,11 @@ config RENESAS_PHY
 	help
 	  Supports the Renesas PHYs uPD60620 and uPD60620A.
 
+config RTL8364_PHY
+	tristate "Realtek 8364S PHYs"
+	help
+	  Supports the Realtek PHYs RTL8364S.
+
 config ROCKCHIP_PHY
 	tristate "Rockchip Ethernet PHYs"
 	help
