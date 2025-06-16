@@ -75,4 +75,5 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
 	aspeed-bmc-vegman-sx20.dtb \
 	aspeed-bmc-yage-dpu.dtb \
 	aspeed-bmc-yage-dpu-29.dtb \
-	aspeed-bmc-yucca-dpu25.dtb
+	aspeed-bmc-yucca-dpu25-v1.dtb \
+	aspeed-bmc-yucca-dpu25-v2.dtb \
