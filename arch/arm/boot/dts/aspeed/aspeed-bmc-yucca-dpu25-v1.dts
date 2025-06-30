@@ -66,12 +66,12 @@
 				<&adc1 4>, <&adc1 5>, <&adc1 6>, <&adc1 7>;
 	};
 	p1v8_bmc_aux: regulator-p1v8-bmc-aux {
-                compatible = "regulator-fixed";
-                regulator-name = "p1v8_bmc_aux";
-                regulator-min-microvolt = <1800000>;
-                regulator-max-microvolt = <1800000>;
-                regulator-always-on;
-        };
+		compatible = "regulator-fixed";
+		regulator-name = "p1v8_bmc_aux";
+		regulator-min-microvolt = <1800000>;
+		regulator-max-microvolt = <1800000>;
+		regulator-always-on;
+	};
 };
 
 &adc0 {
@@ -213,13 +213,17 @@
 
 &i2c5 {
 	status = "okay";
-	soc_temp: ct7432@0x98 {
+	soc_temp: ct7432@0x4c {
 		compatible = "senylink,ct7432";
-		reg = <0x98>;
+		reg = <0x4c>;
 	};
-	fpga_temp: ct7432@0x99 {
+	fpga_temp: ct7432@0x4c {
 		compatible = "senylink,ct7432";
-		reg = <0x99>;
+		reg = <0x4c>;
+	};
+	mpq8785@0x20 {
+		compatible = "mps,mpq8785";
+		reg = <0x20>;
 	};
 };
 

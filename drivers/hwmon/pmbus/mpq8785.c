@@ -13,6 +13,7 @@ static int mpq8785_identify(struct i2c_client *client,
 {
 	int vout_mode;
 
+	pr_info("yucca: mpq8785 is discover\n");
 	vout_mode = pmbus_read_byte_data(client, 0, PMBUS_VOUT_MODE);
 	if (vout_mode < 0 || vout_mode == 0xff)
 		return vout_mode < 0 ? vout_mode : -ENODEV;
