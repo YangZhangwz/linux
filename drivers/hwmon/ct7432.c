@@ -62,7 +62,7 @@ static int ct7432_read_temp(struct i2c_client *client, int channel, s16 *raw)
 		return -EIO;
 
 	*raw = (msb << 8) | lsb;
-	printk("ct7432: channel=%d, msb=0x%02x, lsb=0x%02x, raw=0x%04x\n", channel, msb, lsb, *raw);
+	pr_debug("ct7432: channel=%d, msb=0x%02x, lsb=0x%02x, raw=0x%04x\n", channel, msb, lsb, *raw);
 
 	return 0;
 }
